@@ -3,16 +3,16 @@ import java.util.Arrays;
 public class mergeSort {
 
     // Merge two sorted parts
-    static void merge(int arr[], int start, int mid, int end) {
+    static void merge(int arr[], int s, int mid, int e) {
 
-        int temp[] = new int[end - start + 1];
+        int temp[] = new int[e - s + 1];
 
-        int i = start;      // left part
+        int i = s;      // left part
         int j = mid + 1;    // right part
         int k = 0;
 
         // Compare elements from both parts
-        while (i <= mid && j <= end) {
+        while (i <= mid && j <= e) {
 
             if (arr[i] <= arr[j]) {
                 temp[k] = arr[i];
@@ -33,7 +33,7 @@ public class mergeSort {
         }
 
         // Remaining elements of right part
-        while (j <= end) {
+        while (j <= e) {
             temp[k] = arr[j];
             j++;
             k++;
@@ -41,29 +41,29 @@ public class mergeSort {
 
         // Copy temp back to original array
         for (int x = 0; x < temp.length; x++) {
-            arr[start + x] = temp[x];
+            arr[s + x] = temp[x];
         }
     }
 
 
     // Merge Sort
-    static void mergeSort(int arr[], int start, int end) {
+    static void mergeSort(int arr[], int s, int e) {
 
         // Base case
-        if (start >= end) {
+        if (s >= e) {
             return;
         }
 
-        int mid = start + (end - start) / 2;
+        int mid = s + (e - s) / 2;
 
         // Sort left half
-        mergeSort(arr, start, mid);
+        mergeSort(arr, s, mid);
 
         // Sort right half
-        mergeSort(arr, mid + 1, end);
+        mergeSort(arr, mid + 1, e);
 
         // Merge both sorted halves
-        merge(arr, start, mid, end);
+        merge(arr, s, mid, e);
     }
 
 
