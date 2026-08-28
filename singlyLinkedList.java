@@ -201,6 +201,49 @@ public class singlyLinkedList {
         temp.data=newData;
     }
 
+
+    // -----------------------------------------------------------
+    // DELETE HEAD
+    public void deleteHead(){
+        if(head==null){
+            System.out.println("Empty list");
+        }
+        else{
+            head=head.next;
+            size--;
+        }
+        if(head==null){
+            tail=null;
+        }
+    }
+
+
+    // DELETE TAIL
+    public void deleteTail(){
+        if(head==null || tail==null){
+            System.out.println("Empty list");
+        }
+        // check for single node
+        if(head==tail){
+            head=null;
+            tail=null;
+            size=0;
+        }
+
+        // check for normal case 
+        Node temp=head;
+        for(int i=0;i<size-2;i++){
+            temp=temp.next;
+        }
+        // now asign temp->next value as null
+        temp.next=null;
+        tail=temp;
+
+        // update the size
+        size--;
+    }
+
+
     public static void main(String[] args) {
 
         // Create a linked list
@@ -238,6 +281,11 @@ public class singlyLinkedList {
         // update position value
         myList.updatePositionData(3,88);
         myList.travarseLinkedList();
-        
+        // __________DELETE____________________________________________
+        myList.deleteHead();
+        myList.travarseLinkedList();
+        // ----------
+        myList.deleteTail();
+        myList.travarseLinkedList(); 
     }
 }
