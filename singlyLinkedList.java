@@ -191,6 +191,16 @@ public class singlyLinkedList {
         return -1 ;
     }
 
+
+    // UPDATE EXACT ANY POSITION DATA
+    public void updatePositionData(int position, int newData){
+        Node temp=head;
+        for(int i =0;i<position;i++){
+            temp=temp.next;
+        }
+        temp.data=newData;
+    }
+
     public static void main(String[] args) {
 
         // Create a linked list
@@ -224,6 +234,10 @@ public class singlyLinkedList {
         System.out.println(myList.findTarget(90));
         // target position found
         System.out.println("Target find Position: "+myList.findTargetPosition(10));
+
+        // update position value
+        myList.updatePositionData(3,88);
+        myList.travarseLinkedList();
         
     }
 }
