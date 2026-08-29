@@ -106,7 +106,70 @@ public class circularDoublyLL {
         size++;
     }
 
+    // delete HEAD
+    public void deleteHead(){
+        if(head==null || tail==null){
+            System.out.println("Not possible");
+            return;
+        }
 
+        if(head==tail){
+            head=null;
+            tail=null;
+            size=0;
+            return;
+        }
+
+        
+        Node temp=head;
+
+        head=head.next;
+
+        // make the node isolate
+        temp.next=null;
+        temp.prev=null;
+
+        // now Connect
+        head.prev=tail;
+        tail.next=head;
+
+        
+        // decrease
+        size--;
+
+
+    }
+
+
+    // delete TAIl
+    public void deleteTail(){
+        if(tail==null){
+            System.out.println("Not Possible");
+            return;
+        }
+        if(head==tail){
+            head=null;
+            tail=null;
+            size=0;
+            return;
+        }
+
+        Node temp=tail;
+
+        tail=tail.prev;
+
+        // isolate the node
+        temp.prev=null;
+        temp.next=null;
+
+        // connect
+        tail.next=head;
+        head.prev=tail;
+
+
+        // decrease
+        size--;
+    }   
 
     public static void main(String[] args) {
 
