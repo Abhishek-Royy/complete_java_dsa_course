@@ -61,6 +61,7 @@ public class slow_fastPointer {
 
         slow_fastPointer list = new slow_fastPointer();
 
+        // insert some value in the list
         list.insertNode(10);
         list.insertNode(40);
         list.insertNode(30);
