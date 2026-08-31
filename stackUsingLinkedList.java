@@ -81,6 +81,7 @@ public class stackUsingLinkedList {
         System.out.println(stack.pop());
         stack.displayStackData();
         System.out.println(stack.peak());
+        System.out.println(stack.isEmpty());
         
         
     }
