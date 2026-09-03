@@ -24,6 +24,7 @@ The repository contains Java implementations of various:
 * Dynamic Programming
 * Common coding interview problems
 * LeetCode-style problems
+* skip Heap
 
 The code is written with a focus on **understanding the logic and approach**, rather than simply providing the shortest possible solution.
 
