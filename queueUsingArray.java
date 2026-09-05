@@ -61,7 +61,7 @@ public class queueUsingArray {
         }
 
 
-        // print the queue
+        // print the queue and display the data
         public void displayQueue(){
             if(isEmpty()){
                 System.out.println("Queue is empty");
